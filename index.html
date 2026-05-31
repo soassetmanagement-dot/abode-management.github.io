@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abode Management - Property Management Software</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <img src="logo.svg" alt="Abode Management Logo" class="w-8 h-8 rounded-lg" />
+                    <span class="font-bold text-xl tracking-tight">Abode Management</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Features</a>
+                    <a href="#security" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Security</a>
+                </div>
+                <div>
+                    <a href="#download" class="inline-flex items-center justify-center px-5 py-2 text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition duration-150 ease-in-out shadow-sm hover:shadow-md">
+                        Download App
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 hero-pattern overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-4xl mx-auto leading-tight">
+                Complete control over your <br class="hidden md:block" />
+                <span class="bg-gradient-to-r from-indigo-600 to-violet-500 gradient-text">real estate portfolio</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                A powerful, offline property management platform tailor-maide for landlords and asset managers in Trinidad and Tobago. Secure, fast, and completely private.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#download" class="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-slate-900 rounded-full hover:bg-slate-800 transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Download for Windows
+                </a>
+                <p class="text-sm text-slate-500 mt-2 sm:mt-0 sm:ml-4">v1.2.75 • Free for personal use</p>
+            </div>
+            
+            </div>
+            
+            <!-- Dashboard Preview Graphic & Interactive Carousel -->
+            <div class="mt-12 sm:mt-20">
+                <!-- Carousel Navigation Tabs -->
+                <div class="flex flex-wrap justify-center items-center gap-2 mb-8 max-w-4xl mx-auto px-4">
+                    <button onclick="goToSlide(0)" class="carousel-tab px-4 py-2.5 text-sm font-semibold rounded-full shadow-sm hover:scale-102 active:scale-98 transition-all duration-200 flex items-center gap-2 cursor-pointer border" id="tab-0">
+                        <span class="w-2.5 h-2.5 rounded-full transition-colors duration-300" id="tab-dot-0"></span>
+                        Overview Dashboard
+                    </button>
+                    <button onclick="goToSlide(1)" class="carousel-tab px-4 py-2.5 text-sm font-semibold rounded-full shadow-sm hover:scale-102 active:scale-98 transition-all duration-200 flex items-center gap-2 cursor-pointer border" id="tab-1">
+                        <span class="w-2.5 h-2.5 rounded-full transition-colors duration-300" id="tab-dot-1"></span>
+                        Properties Portfolio
+                    </button>
+                    <button onclick="goToSlide(2)" class="carousel-tab px-4 py-2.5 text-sm font-semibold rounded-full shadow-sm hover:scale-102 active:scale-98 transition-all duration-200 flex items-center gap-2 cursor-pointer border" id="tab-2">
+                        <span class="w-2.5 h-2.5 rounded-full transition-colors duration-300" id="tab-dot-2"></span>
+                        Financial Ledger
+                    </button>
+                    <button onclick="goToSlide(3)" class="carousel-tab px-4 py-2.5 text-sm font-semibold rounded-full shadow-sm hover:scale-102 active:scale-98 transition-all duration-200 flex items-center gap-2 cursor-pointer border" id="tab-3">
+                        <span class="w-2.5 h-2.5 rounded-full transition-colors duration-300" id="tab-dot-3"></span>
+                        Maintenance Tasks
+                    </button>
+                </div>
+
+                <!-- Web browser wrapper mockup -->
+                <div class="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200/60 transform transition duration-500 hover:shadow-3xl relative group">
+                    <div class="h-11 bg-slate-50 border-b border-slate-200/80 flex items-center justify-between px-4 gap-2">
+                        <div class="flex items-center gap-2">
+                            <div onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-rose-400 hover:bg-rose-500 cursor-pointer transition"></div>
+                            <div onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-amber-400 hover:bg-amber-500 cursor-pointer transition"></div>
+                            <div onclick="goToSlide(2)" class="w-3 h-3 rounded-full bg-emerald-400 hover:bg-emerald-500 cursor-pointer transition"></div>
+                        </div>
+                        
+                        <!-- Mock Address Bar -->
+                        <div class="flex-1 max-w-md mx-auto h-7 bg-slate-200/45 rounded-lg text-slate-500 text-xs flex items-center justify-center gap-1.5 px-3 border border-slate-200/60 font-medium select-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-slate-400"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            <span id="current-url" class="font-mono text-slate-500 transition-all duration-300">abode://dashboard</span>
+                        </div>
+                        
+                        <div class="w-16 flex justify-end gap-1.5 opacity-40">
+                            <div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+                        </div>
+                    </div>
+                
+                    <!-- Slides content aspect ratio locked 16:9 -->
+                    <div class="relative overflow-hidden bg-slate-900 aspect-[16/9] w-full select-none">
+                        <!-- Slide 0 -->
+                        <div id="slide-0" class="absolute inset-0 transition-all duration-700 ease-in-out transform flex items-center justify-center shadow-inner">
+                            <img src="desktop_screenshot.png" alt="Abode Management Desktop Dashboard" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        </div>
+                        <!-- Slide 1 -->
+                        <div id="slide-1" class="absolute inset-0 transition-all duration-700 ease-in-out transform translate-x-full opacity-0 pointer-events-none flex items-center justify-center shadow-inner">
+                            <img src="properties_screenshot.png" alt="Properties Portfolio view showing home details" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        </div>
+                        <!-- Slide 2 -->
+                        <div id="slide-2" class="absolute inset-0 transition-all duration-700 ease-in-out transform translate-x-full opacity-0 pointer-events-none flex items-center justify-center shadow-inner">
+                            <img src="finances_screenshot.png" alt="Financial summary ledger charts with revenue insights" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        </div>
+                        <!-- Slide 3 -->
+                        <div id="slide-3" class="absolute inset-0 transition-all duration-700 ease-in-out transform translate-x-full opacity-0 pointer-events-none flex items-center justify-center shadow-inner">
+                            <img src="tasks_screenshot.png" alt="Kanban maintenance board for support tasks and schedules" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                        </div>
+
+                        <!-- Manual Arrows -->
+                        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 bg-white/95 hover:bg-white text-slate-800 rounded-full flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 z-20 border border-slate-200/50 cursor-pointer" aria-label="Previous Slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 bg-white/95 hover:bg-white text-slate-800 rounded-full flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 opacity-0 group-hover:opacity-100 focus:opacity-100 z-20 border border-slate-200/50 cursor-pointer" aria-label="Next Slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Descriptive Information Card overlay & Navigation dots -->
+                <div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-6 px-4 max-w-5xl mx-auto">
+                    <div class="text-left flex-1 max-w-2xl bg-white/60 backdrop-blur-sm px-6 py-4 rounded-2xl border border-slate-100 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 select-none">Application view</span>
+                        <h4 id="slide-title" class="font-bold text-slate-900 text-lg sm:text-xl transition-all duration-300 mt-0.5">Overview Dashboard</h4>
+                        <p id="slide-description" class="text-sm sm:text-base text-slate-600 mt-1.5 leading-relaxed transition-all duration-300">Real-time occupancy status, lease alerts, and quick visual charts across your entire portfolio.</p>
+                    </div>
+
+                    <!-- Slide bullet controls -->
+                    <div class="flex items-center gap-2.5">
+                        <button onclick="goToSlide(0)" class="carousel-dot cursor-pointer" id="dot-0" aria-label="Slide 1"></button>
+                        <button onclick="goToSlide(1)" class="carousel-dot cursor-pointer" id="dot-1" aria-label="Slide 2"></button>
+                        <button onclick="goToSlide(2)" class="carousel-dot cursor-pointer" id="dot-2" aria-label="Slide 3"></button>
+                        <button onclick="goToSlide(3)" class="carousel-dot cursor-pointer" id="dot-3" aria-label="Slide 4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Everything you need to manage properties</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">No subscriptions, no cloud dependencies. A beautiful suite of tools crafted for efficiency.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Portfolio Tracking</h3>
+                    <p class="text-slate-600">Track properties, multi-unit complexes, and monitor occupancy status at a glance.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Financial Ledger</h3>
+                    <p class="text-slate-600">Record income and expenses, sort by date or cost, and export statements to Excel or PDF.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Tenant Management</h3>
+                    <p class="text-slate-600">Store tenant details, lease agreements, emergency contacts, and active balances securely.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Tasks & Work Orders</h3>
+                    <p class="text-slate-600">Stay on top of maintenance requests, schedule upcoming repairs, and track vendors.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Detailed Reports</h3>
+                    <p class="text-slate-600">Generate comprehensive property and profitability reports to understand your ROI instantly.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-indigo-100 hover:shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Local Wi-Fi Sync</h3>
+                    <p class="text-slate-600">Scan a QR code from the desktop app to instantly sync your data to your Android companion app on the same network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-center justify-between gap-16">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Your data stays on your device.</h2>
+                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                        Say goodbye to cloud subscriptions and data privacy concerns. Abode Management uses a local SQLite database, meaning your financial records and tenant information never leave your computer unless you explicitly export or sync them locally.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="h-5 w-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-slate-300">Local-first architecture directly on your machine</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="h-5 w-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-slate-300">Secure Wi-Fi QR Syncing skips cloud servers entirely</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="h-5 w-5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-slate-300">Export your data anytime via standard CSV</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="w-full max-w-sm bg-slate-800 rounded-3xl p-8 border border-slate-700 shadow-2xl relative">
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-indigo-500 rounded-full blur-3xl opacity-50"></div>
+                        <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-violet-500 rounded-full blur-3xl opacity-50"></div>
+                        
+                        <div class="relative z-10 flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-slate-700 rounded-2xl flex items-center justify-center mb-6 text-white shadow-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Absolute Privacy</h3>
+                            <p class="text-slate-400 text-sm mb-6">Your data is stored explicitly on your file system as an SQLite database. You hold the keys to your financial empire.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">Start managing like a pro today</h2>
+                <p class="text-lg text-slate-600">Download the standalone application for Windows or the companion app for Android.</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 flex flex-col items-center text-center transition duration-300 hover:shadow-2xl">
+                    <img src="logo.svg" alt="Abode Management Logo" class="w-20 h-20 rounded-2xl mb-6 shadow-sm" />
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Abode Management</h3>
+                    <p class="text-slate-500 mb-8">Version 1.2.75</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                        <a href="downloads/Abode-Management-Setup.exe" class="w-full sm:w-auto px-8 py-4 text-base font-bold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition shadow-lg flex items-center justify-center gap-2" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download for Desktop (.exe)
+                        </a>
+                        <a href="downloads/Abode-Management.apk" class="w-full sm:w-auto px-8 py-4 text-base font-bold text-slate-700 bg-slate-100 rounded-xl hover:bg-slate-200 transition shadow-md flex items-center justify-center gap-2" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                            Download for Android (.apk)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <img src="logo.svg" alt="Abode Management Logo" class="w-6 h-6 rounded" />
+                <span class="font-bold text-slate-900">Abode Management</span>
+            </div>
+            <p class="text-sm text-slate-500">&copy; 2026 Abode Management. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Carousel Controller JavaScript -->
+    <script>
+        const slidesData = [
+            {
+                title: "Overview Dashboard",
+                description: "Monitor real-time occupancy status, crucial lease alerts, and cash flow trends across your entire portfolio from a single, high-level screen.",
+                url: "abode://dashboard"
+            },
+            {
+                title: "Properties Portfolio Manager",
+                description: "Add, structure, and explore single or multi-family properties. Keep granular records of multi-unit layouts, unit occupancy lists, and essential property parameters.",
+                url: "abode://portfolio"
+            },
+            {
+                title: "Financial Ledger & Cash Flow",
+                description: "Log rents received, utility fees, maintenance bills, and insurance expenses offline-first. Review net income charts and export transactions directly to Excel.",
+                url: "abode://ledger"
+            },
+            {
+                title: "Maintenance & Task Boards",
+                description: "Track work order ticket pipelines with standard Kanban status columns (New, Active, Completed) and assign tasks to trusted contractors.",
+                url: "abode://tasks"
+            }
+        ];
+
+        let currentSlide = 0;
+        let autoplayInterval;
+        const AUTOPLAY_DELAY = 5000;
+
+        function updateCarousel() {
+            for (let i = 0; i < slidesData.length; i++) {
+                const slide = document.getElementById(`slide-${i}`);
+                const tab = document.getElementById(`tab-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+                const tabDot = document.getElementById(`tab-dot-${i}`);
+
+                if (i === currentSlide) {
+                    // Active Slide setup (fully visible and interactive)
+                    slide.className = "absolute inset-0 transition-all duration-700 ease-in-out transform translate-x-0 opacity-100 z-10 flex items-center justify-center";
+                    
+                    // Active Tab button setup (Indigo focused highlight)
+                    tab.className = "carousel-tab px-4 py-2.5 text-sm font-semibold text-indigo-600 bg-indigo-50/85 border-indigo-200/80 rounded-full hover:bg-indigo-100/50 transition duration-200 shadow-sm flex items-center gap-2 cursor-pointer border";
+                    tabDot.className = "w-2.5 h-2.5 rounded-full bg-indigo-600 transition-colors duration-300";
+
+                    // Active bullet dot setup (pill width animation)
+                    dot.className = "carousel-dot cursor-pointer w-6 h-2.5 rounded-full bg-indigo-600 transition-all duration-300 shadow-sm";
+                } else {
+                    // Inactive Slide setup (translated to left or right based on relative index to current)
+                    const translateDir = i < currentSlide ? "-translate-x-full" : "translate-x-full";
+                    slide.className = `absolute inset-0 transition-all duration-700 ease-in-out transform ${translateDir} opacity-0 pointer-events-none flex items-center justify-center`;
+
+                    // Inactive Tab button setup (Slate/white default)
+                    tab.className = "carousel-tab px-4 py-2.5 text-sm font-semibold text-slate-600 bg-white/70 backdrop-blur-sm border-slate-200/50 rounded-full hover:bg-white hover:text-indigo-600 transition duration-200 shadow-sm flex items-center gap-2 cursor-pointer border";
+                    tabDot.className = "w-2.5 h-2.5 rounded-full bg-slate-400 transition-colors duration-300";
+
+                    // Inactive bullet dot setup
+                    dot.className = "carousel-dot cursor-pointer w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-slate-400 transition-all duration-300";
+                }
+            }
+
+            // Sync visual content strings & address bar URL
+            document.getElementById('current-url').textContent = slidesData[currentSlide].url;
+            document.getElementById('slide-title').textContent = slidesData[currentSlide].title;
+            document.getElementById('slide-description').textContent = slidesData[currentSlide].description;
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+            resetAutoplay();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slidesData.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slidesData.length) % slidesData.length;
+            updateCarousel();
+        }
+
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, AUTOPLAY_DELAY);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+
+        // Set up mouse hover handlers to pause rotation while inspecting a screenshot
+        const carouselMockup = document.querySelector('.group');
+        if (carouselMockup) {
+            carouselMockup.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+            carouselMockup.addEventListener('mouseleave', startAutoplay);
+        }
+
+        // Run setup on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCarousel();
+            startAutoplay();
+        });
+    </script>
+
+</body>
+</html>
